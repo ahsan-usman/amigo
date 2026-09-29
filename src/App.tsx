@@ -95,12 +95,12 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const valueCards = [
-  { accentFront: "#073a55", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgShield, num: "01", title: "Integrity", text: "Conducting all operations with honesty, transparency, and high ethical responsibility." },
+  { accentFront: "#07668C", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgShield, num: "01", title: "Integrity", text: "Conducting all operations with honesty, transparency, and high ethical responsibility." },
   { accentFront: "#f0a23a", accentBack: "#f0a23a", iconBgFront: "#fff1d8", icon: imgStar, num: "02", title: "Quality Excellence", text: "Upholding uncompromising standards across flock management, feed, and distribution." },
-  { accentFront: "#05658f", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgHeart, num: "03", title: "Animal Welfare", text: "Prioritizing bird health and comfort through responsible, veterinarian-supervised management." },
+  { accentFront: "#07668c", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgHeart, num: "03", title: "Animal Welfare", text: "Prioritizing bird health and comfort through responsible, veterinarian-supervised management." },
   { accentFront: "#f0a23a", accentBack: "#f0a23a", iconBgFront: "#fff1d8", icon: imgZap, num: "04", title: "Innovation", text: "Continuously upgrading infrastructure, production methods, and technological systems." },
-  { accentFront: "#073a55", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgLeaf, num: "05", title: "Sustainability", text: "Utilizing natural resources responsibly to minimize environmental impact." },
-  { accentFront: "#05658f", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgHandshake1, num: "06", title: "Customer Commitment", text: "Delivering consistent product quality, competitive value, and dependable logistics." },
+  { accentFront: "#07668C", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgLeaf, num: "05", title: "Sustainability", text: "Utilizing natural resources responsibly to minimize environmental impact." },
+  { accentFront: "#07668c", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgHandshake1, num: "06", title: "Customer Commitment", text: "Delivering consistent product quality, competitive value, and dependable logistics." },
 ];
 
 function ValueCard({ accentFront, accentBack, iconBgFront, icon, num, title, text, delay = 0 }: {
@@ -152,7 +152,7 @@ function ValueCard({ accentFront, accentBack, iconBgFront, icon, num, title, tex
         {/* BACK — dark navy card */}
         <div
           className="absolute inset-0 rounded-2xl overflow-hidden shadow-[0px_16px_40px_-8px_rgba(7,58,85,0.35)] flex flex-col items-start"
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", background: "#073a55" }}
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", background: "#07668C" }}
         >
           <div className="h-1 w-full shrink-0" style={{ background: accentBack }} />
           <div className="flex flex-1 flex-col gap-5 items-start p-7 w-full">
@@ -178,11 +178,11 @@ function ValueCard({ accentFront, accentBack, iconBgFront, icon, num, title, tex
 }
 
 const stats = [
-  { icon: imgEgg, target: 400000, suffix: "+", label: "Commercial layer birds", accent: "#05658f", highlight: false },
-  { icon: imgWarehouse, target: 500000, suffix: "+", label: "Broiler capacity", accent: "#05658f", highlight: false },
+  { icon: imgEgg, target: 400000, suffix: "+", label: "Commercial layer birds", accent: "#07668c", highlight: false },
+  { icon: imgWarehouse, target: 500000, suffix: "+", label: "Broiler capacity", accent: "#07668c", highlight: false },
   { icon: imgWheat, target: 1500, suffix: "+ MT", label: "Feed output / month", accent: "#f0a23a", highlight: true },
-  { icon: imgBird, target: 500000, suffix: "+", label: "Commercial broiler breeders", accent: "#05658f", highlight: false },
-  { icon: imgCalendarRange, target: 50, suffix: "+ Yrs", label: "Heritage since the 1970s", accent: "#073a55", highlight: false },
+  { icon: imgBird, target: 500000, suffix: "+", label: "Commercial broiler breeders", accent: "#07668c", highlight: false },
+  { icon: imgCalendarRange, target: 50, suffix: "+ Yrs", label: "Heritage since the 1970s", accent: "#07668C", highlight: false },
 ];
 
 function StatTile({ icon, target, suffix, label, accent, highlight, active, index }: {
@@ -233,7 +233,7 @@ function StatsSection() {
         }}
       >
         {/* top accent stripe */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#073a55] via-[#05658f] to-[#f0a23a]" />
+        <div className="h-1 w-full bg-gradient-to-r from-[#07668C] via-[#07668c] to-[#f0a23a]" />
 
         <div className="flex flex-col lg:flex-row items-stretch divide-y lg:divide-y-0 lg:divide-x divide-[#e8eeef]">
           {stats.map((s, i) => (
@@ -270,6 +270,12 @@ function scrollTo(id: string) {
 export default function AmigoFarms() {
   const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", interest: "", message: "" });
   const [activeSection, setActiveSection] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+  }, [mobileMenuOpen]);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -296,7 +302,7 @@ export default function AmigoFarms() {
         </div>
 
         {/* Header */}
-        <div className="absolute bg-[rgba(255,255,255,0.98)] flex h-22 items-center justify-between left-0 right-0 top-0 px-6 md:px-16 shadow-[0px_4px_16px_0px_rgba(7,58,85,0.12)] z-10">
+        <div className="fixed bg-white/70 backdrop-blur-md flex h-22 items-center justify-between left-0 right-0 top-0 px-6 md:px-16 shadow-[0px_4px_16px_0px_rgba(7,58,85,0.12)] z-[100] transition-colors duration-300">
           <button onClick={scrollToTop} className="flex h-15 items-center justify-center rounded-lg shrink-0 w-32 md:w-40 overflow-hidden">
             <img alt="Amigo Farms" className="object-contain size-full" src={imgLogoArtwork} />
           </button>
@@ -306,9 +312,8 @@ export default function AmigoFarms() {
                 <button
                   key={id}
                   onClick={() => scrollTo(id)}
-                  className={`font-['Inter:Semi_Bold'] font-semibold text-sm whitespace-nowrap transition-colors ${
-                    activeSection === id ? "text-[#05658f]" : "text-[#17242a] hover:text-[#05658f]"
-                  }`}
+                  className={`font-['Inter:Semi_Bold'] font-semibold text-sm whitespace-nowrap transition-colors ${activeSection === id ? "text-[#07668c]" : "text-[#17242a] hover:text-[#07668c]"
+                    }`}
                 >
                   {label}
                 </button>
@@ -316,12 +321,42 @@ export default function AmigoFarms() {
             </div>
             <button
               onClick={() => scrollTo("contact")}
-              className="bg-[#f0a23a] border border-[#f0a23a] flex gap-2 md:gap-3 h-10 md:h-13 items-center justify-center px-4 md:px-6 rounded-full shrink-0 hover:bg-[#e8952e] transition-colors"
+              className="bg-[#f0a23a] border border-[#f0a23a] flex gap-2 md:gap-3 h-10 md:h-13 items-center justify-center px-4 md:px-6 rounded-full shrink-0 hover:bg-[#e8952e] hover:scale-105 active:scale-95 transition-all"
             >
               <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-xs md:text-sm whitespace-nowrap">Get In Touch</p>
               <img alt="" className="size-3 md:size-4" src={imgArrowUpRight} />
             </button>
+            <button onClick={() => setMobileMenuOpen(true)} className="flex lg:hidden flex-col gap-1.5 p-2 items-center justify-center cursor-pointer">
+              <div className="w-6 h-0.5 bg-[#17242a] rounded-full" />
+              <div className="w-6 h-0.5 bg-[#17242a] rounded-full" />
+              <div className="w-4 h-0.5 bg-[#17242a] rounded-full self-end" />
+            </button>
           </nav>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <div className={`fixed inset-0 bg-[#07668C]/95 backdrop-blur-xl z-[200] transition-opacity duration-300 lg:hidden ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+          <div className="flex flex-col h-full p-6 pt-8">
+            <div className="flex justify-between items-center h-15">
+              <img alt="Amigo Farms" className="h-10 brightness-0 invert" src={imgLogoArtwork} />
+              <button onClick={() => setMobileMenuOpen(false)} className="p-2 relative w-10 h-10 flex items-center justify-center cursor-pointer">
+                <div className="absolute w-6 h-0.5 bg-white rotate-45 rounded-full" />
+                <div className="absolute w-6 h-0.5 bg-white -rotate-45 rounded-full" />
+              </button>
+            </div>
+            <div className="flex flex-col gap-8 items-start mt-16 px-4">
+              {navLinks.map(({ label, id }) => (
+                <button
+                  key={id}
+                  onClick={() => { setMobileMenuOpen(false); scrollTo(id); }}
+                  className={`font-['Lora:Bold'] text-3xl transition-colors ${activeSection === id ? "text-[#f0a23a]" : "text-white"
+                    }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Hero content */}
@@ -339,11 +374,11 @@ export default function AmigoFarms() {
             Amigo Farms (Pvt.) Ltd. is a leading semi-integrated poultry enterprise supplying high-quality, hygienic, and safe table eggs, day-old chicks, and poultry feed across Pakistan. Driven by modern farming practices, strict biosecurity, and a deep-rooted commitment to national food security, we consistently set benchmark standards in operational excellence and animal welfare.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 items-start w-full sm:w-auto">
-            <button onClick={() => scrollTo("contact")} className="w-full sm:w-auto bg-[#f0a23a] border border-[#f0a23a] flex gap-3 h-13 items-center justify-center px-6 rounded-full hover:bg-[#e8952e] transition-colors">
+            <button onClick={() => scrollTo("contact")} className="w-full sm:w-auto bg-[#f0a23a] border border-[#f0a23a] flex gap-3 h-13 items-center justify-center px-6 rounded-full hover:bg-[#e8952e] hover:scale-105 active:scale-95 transition-all duration-300">
               <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-sm whitespace-nowrap">Get In Touch</p>
               <img alt="" className="size-4" src={imgArrowUpRight} />
             </button>
-            <button onClick={() => scrollTo("heritage")} className="w-full sm:w-auto bg-transparent border border-[rgba(255,255,255,0.53)] flex gap-3 h-13 items-center justify-center px-6 rounded-full hover:border-white transition-colors">
+            <button onClick={() => scrollTo("heritage")} className="w-full sm:w-auto bg-transparent border border-[rgba(255,255,255,0.53)] flex gap-3 h-13 items-center justify-center px-6 rounded-full hover:border-white hover:scale-105 active:scale-95 transition-all duration-300">
               <p className="font-['Inter:Bold'] font-bold text-sm text-white whitespace-nowrap">Our Heritage</p>
               <img alt="" className="size-4" src={imgArrowUpRight1} />
             </button>
@@ -359,7 +394,7 @@ export default function AmigoFarms() {
         <FadeIn className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center w-full">
           <div className="flex flex-1 flex-col gap-6 items-start">
             <div className="flex flex-col gap-4 items-start w-full">
-              <p className="font-['Inter:Bold'] font-bold text-[#05658f] text-xs uppercase">About us</p>
+              <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">About us</p>
               <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">A semi-integrated poultry network, built to last</p>
             </div>
             <p className="font-['Inter:Regular'] font-normal leading-[1.7] text-[#47545a] text-base">
@@ -391,7 +426,7 @@ export default function AmigoFarms() {
         <FadeIn delay={100} className="w-full">
           <div className="bg-[#e6f2f5] flex flex-col md:flex-row gap-6 items-start p-6 md:p-8 rounded-2xl w-full">
             <div className="flex flex-col gap-2 items-start shrink-0 w-full md:w-[280px]">
-              <p className="font-['Lora:Bold'] font-bold text-[#073a55] text-2xl whitespace-nowrap">Under one roof</p>
+              <p className="font-['Lora:Bold'] font-bold text-[#07668C] text-2xl whitespace-nowrap">Under one roof</p>
               <p className="font-['Inter:Regular'] font-normal text-[#47545a] text-sm">One coordinated network, quality controlled end to end.</p>
             </div>
             <div className="flex flex-1 flex-col gap-3 items-start">
@@ -419,10 +454,10 @@ export default function AmigoFarms() {
         <FadeIn className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start w-full">
           <div className="flex flex-col gap-8 items-start shrink-0 w-full lg:w-[420px]">
             <div className="flex flex-col gap-4 items-start w-full">
-              <p className="font-['Inter:Bold'] font-bold text-[#05658f] text-xs uppercase">{`History & heritage`}</p>
+              <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">{`History & heritage`}</p>
               <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Five decades of purposeful progress</p>
             </div>
-            <div className="bg-[#073a55] flex flex-col gap-4 items-start p-6 md:p-8 rounded-2xl w-full">
+            <div className="bg-[#07668C] flex flex-col gap-4 items-start p-6 md:p-8 rounded-2xl w-full">
               <p className="font-['Lora:Regular'] font-normal text-[#f0a23a] text-5xl whitespace-nowrap">"</p>
               <p className="font-['Lora:Bold'] font-bold leading-[1.25] text-white text-2xl md:text-[28px]">A Legacy Built on Vision, Quality, and Innovation.</p>
             </div>
@@ -451,11 +486,11 @@ export default function AmigoFarms() {
             ].map(({ era, title, text, last }) => (
               <div key={era} className="flex gap-6 items-start w-full">
                 <div className="flex flex-col gap-2 items-center self-stretch shrink-0 w-6">
-                  <div className="bg-[#f0a23a] border-4 border-[#073a55] rounded-full shrink-0 size-4" />
+                  <div className="bg-[#f0a23a] border-4 border-[#07668C] rounded-full shrink-0 size-4" />
                   {!last && <div className="bg-[#dce3e3] flex-1 min-h-[130px] w-0.5" />}
                 </div>
                 <div className="flex flex-1 flex-col gap-3 items-start pb-8">
-                  <p className="font-['Inter:Bold'] font-bold text-[#05658f] text-xs uppercase">{era}</p>
+                  <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">{era}</p>
                   <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">{title}</p>
                   <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-sm">{text}</p>
                 </div>
@@ -469,7 +504,7 @@ export default function AmigoFarms() {
       <div className="bg-[#e6f2f5] flex flex-col items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full"> {/* part of heritage */}
         <FadeIn className="flex flex-col lg:flex-row gap-6 items-start w-full">
           {/* Vision */}
-          <div className="bg-[#073a55] flex flex-1 flex-col gap-8 items-start min-h-[auto] lg:min-h-[620px] p-8 md:p-12 rounded-2xl overflow-hidden">
+          <div className="bg-[#07668C] flex flex-1 flex-col gap-8 items-start min-h-[auto] lg:min-h-[620px] p-8 md:p-12 rounded-2xl overflow-hidden">
             <img alt="" className="size-9" src={imgEye} />
             <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-xs uppercase">Our vision</p>
             <p className="font-['Lora:Bold'] font-bold leading-[1.3] text-white text-3xl lg:text-[38px]">{`To be recognized as Pakistan's most trusted and innovative poultry farming enterprise, delivering superior-quality eggs and poultry products while advancing sustainable agricultural practices and strengthening national food security.`}</p>
@@ -477,7 +512,7 @@ export default function AmigoFarms() {
 
           {/* Mission */}
           <div className="bg-white flex flex-1 flex-col gap-6 items-start p-8 md:p-12 rounded-2xl overflow-hidden">
-            <p className="font-['Inter:Bold'] font-bold text-[#05658f] text-xs uppercase">Our mission</p>
+            <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">Our mission</p>
             {[
               { icon: imgShieldCheck, title: "Product Safety", text: "Produce safe, nutritious, high-quality eggs and healthy day-old chicks that consistently exceed customer expectations." },
               { icon: imgHeartPulse, title: "Flock Welfare", text: "Maintain the highest standards of poultry health, housing comfort, and biosecurity protocols." },
@@ -504,7 +539,7 @@ export default function AmigoFarms() {
         <FadeIn className="flex flex-col gap-4 items-start w-full">
           <div className="flex gap-3 items-center">
             <div className="bg-[#f0a23a] h-[3px] rounded-sm shrink-0 w-8" />
-            <p className="font-['Inter:Bold'] font-bold text-[#05658f] text-xs uppercase whitespace-nowrap">Core values</p>
+            <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase whitespace-nowrap">Core values</p>
           </div>
           <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Six principles, one carton</p>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">The standards behind every bird, every batch, and every delivery.</p>
@@ -520,7 +555,7 @@ export default function AmigoFarms() {
         </div>
 
         {/* Values banner */}
-        <div className="bg-[#073a55] flex flex-col md:flex-row gap-6 md:gap-0 items-start md:items-center justify-between px-6 md:px-10 py-8 rounded-2xl w-full">
+        <div className="bg-[#07668C] flex flex-col md:flex-row gap-6 md:gap-0 items-start md:items-center justify-between px-6 md:px-10 py-8 rounded-2xl w-full">
           <div className="flex flex-1 flex-col gap-1.5 items-start">
             <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-[11px] uppercase">Our commitment</p>
             <p className="font-['Lora:Bold'] font-bold leading-[1.3] text-white text-xl md:text-[22px]">Every principle is lived daily — from the feed mill to the delivery van.</p>
@@ -535,7 +570,7 @@ export default function AmigoFarms() {
       {/* Operations */}
       <div id="operations" className="bg-white flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full">
         <div className="flex flex-col gap-4 items-start w-full">
-          <p className="font-['Inter:Bold'] font-bold text-[#05658f] text-xs uppercase">{`Operations & infrastructure`}</p>
+          <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">{`Operations & infrastructure`}</p>
           <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">A semi-integrated network across five verticals</p>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">Control at every critical stage keeps quality measurable, welfare protected, and supply dependable.</p>
         </div>
@@ -543,7 +578,7 @@ export default function AmigoFarms() {
         <div className="flex flex-col gap-6 items-start w-full">
           {/* Primary row */}
           <div className="flex flex-col lg:flex-row gap-6 items-start w-full">
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[590px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full">
+            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[590px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
               <div className="h-[200px] md:h-[290px] relative shrink-0 w-full">
                 <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography} />
               </div>
@@ -555,7 +590,7 @@ export default function AmigoFarms() {
                 <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">Fully automated environmental control housing, automated egg collection, hygienic grading, and temperature-controlled storage.</p>
               </div>
             </div>
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full">
+            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
               <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
                 <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography1} />
               </div>
@@ -567,7 +602,7 @@ export default function AmigoFarms() {
                 <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">Environmentally controlled dark houses spread across 10 strategic farm locations, managed by specialized production teams using internal day-old chicks and feed.</p>
               </div>
             </div>
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full">
+            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
               <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
                 <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography2} />
               </div>
@@ -582,7 +617,7 @@ export default function AmigoFarms() {
           </div>
           {/* Supporting row */}
           <div className="flex flex-col lg:flex-row gap-6 items-start w-full">
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full">
+            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
               <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
                 <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography3} />
               </div>
@@ -591,9 +626,9 @@ export default function AmigoFarms() {
                 <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">Strategic multi-location hatcheries housing top-tier commercial equipment, supplying day-old chicks.</p>
               </div>
             </div>
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full">
+            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
               <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography4} />
+                <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" />
               </div>
               <div className="flex flex-1 flex-col gap-3 items-start p-6 w-full">
                 <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">{`05 Distribution & Logistics`}</p>
@@ -610,7 +645,7 @@ export default function AmigoFarms() {
       </div>
 
       {/* Quality Assurance */}
-      <div id="quality" className="bg-[#073a55] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full">
+      <div id="quality" className="bg-[#07668C] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full">
         <div className="flex flex-col gap-4 items-start w-full">
           <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-xs uppercase">{`Quality assurance & biosecurity`}</p>
           <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-white text-3xl md:text-4xl lg:text-5xl">Trust, protected at every gate</p>
@@ -623,7 +658,7 @@ export default function AmigoFarms() {
             { icon: imgFlaskConical, title: "Scientific Nutrition", text: "In-house laboratory analysis of raw ingredients and custom-formulated diets." },
             { icon: imgScanBarcode, title: "Hygienic Handling & Traceability", text: "Automated grading and comprehensive batch record-keeping for complete supply-chain accountability." },
           ].map(({ icon, title, text }) => (
-            <div key={title} className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.14)] flex flex-1 flex-col gap-4 items-start p-6 rounded-xl w-full">
+            <div key={title} className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.14)] flex flex-1 flex-col gap-4 items-start p-6 rounded-xl w-full transition-all duration-300 hover:bg-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.3)] hover:-translate-y-1">
               <img alt="" className="size-[30px]" src={icon} />
               <p className="font-['Lora:Bold'] font-bold text-white text-xl">{title}</p>
               <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#d5e4ea] text-sm">{text}</p>
@@ -633,8 +668,8 @@ export default function AmigoFarms() {
       </div>
 
       {/* Legacy Quote */}
-      <div className="bg-[#05658f] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-12 lg:py-16 w-full">
-        <p className="font-['Lora:Bold'] font-bold leading-[1.2] text-3xl md:text-4xl lg:text-[54px] text-center text-white w-full">
+      <div className="bg-[#e6f2f5] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-12 lg:py-16 w-full">
+        <p className="font-['Lora:Bold'] font-bold leading-[1.2] text-3xl md:text-4xl lg:text-[54px] text-center text-[#07668C] w-full">
           "A Legacy Built on Vision, Quality, and Innovation, from a backyard poultry venture in the 1970s to a semi-integrated enterprise spanning layers, breeders, feed, and hatcheries."
         </p>
         <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-lg md:text-xl text-center w-full">
@@ -651,7 +686,7 @@ export default function AmigoFarms() {
       {/* Contact */}
       <div id="contact" className="bg-[#faf7f2] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full">
         <div className="flex flex-col gap-4 items-start w-full">
-          <p className="font-['Inter:Bold'] font-bold text-[#05658f] text-xs uppercase">Contact us</p>
+          <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">Contact us</p>
           <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Start a conversation with our team</p>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">Tell us what you need. Our Gujranwala team will connect you with the right department.</p>
         </div>
@@ -666,7 +701,7 @@ export default function AmigoFarms() {
                 <div key={key} className="flex w-full sm:flex-1 flex-col gap-2 items-start">
                   <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-sm">{label}</p>
                   <input
-                    className="bg-white border border-[#dce3e3] flex h-13 items-center px-4 rounded-lg w-full text-sm font-['Inter:Regular'] text-[#17242a] placeholder:text-[#748087] outline-none focus:border-[#05658f] transition-colors"
+                    className="bg-white border border-[#dce3e3] flex h-13 items-center px-4 rounded-lg w-full text-sm font-['Inter:Regular'] text-[#17242a] placeholder:text-[#748087] outline-none focus:border-[#07668c] focus:ring-4 focus:ring-[#07668c]/20 transition-all"
                     placeholder={placeholder}
                     value={form[key]}
                     onChange={(e) => setForm({ ...form, [key]: e.target.value })}
@@ -682,7 +717,7 @@ export default function AmigoFarms() {
                 <div key={key} className="flex w-full sm:flex-1 flex-col gap-2 items-start">
                   <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-sm">{label}</p>
                   <input
-                    className="bg-white border border-[#dce3e3] flex h-13 items-center px-4 rounded-lg w-full text-sm font-['Inter:Regular'] text-[#17242a] placeholder:text-[#748087] outline-none focus:border-[#05658f] transition-colors"
+                    className="bg-white border border-[#dce3e3] flex h-13 items-center px-4 rounded-lg w-full text-sm font-['Inter:Regular'] text-[#17242a] placeholder:text-[#748087] outline-none focus:border-[#07668c] focus:ring-4 focus:ring-[#07668c]/20 transition-all"
                     placeholder={placeholder}
                     value={form[key]}
                     onChange={(e) => setForm({ ...form, [key]: e.target.value })}
@@ -692,9 +727,9 @@ export default function AmigoFarms() {
             </div>
             <div className="flex flex-col gap-2 items-start w-full">
               <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-sm">{"I'm interested in"}</p>
-              <div className="bg-white border border-[#dce3e3] flex h-13 items-center justify-between px-4 rounded-lg w-full relative">
+              <div className="bg-white border border-[#dce3e3] flex h-13 items-center justify-between px-4 rounded-lg w-full relative focus-within:border-[#07668c] focus-within:ring-4 focus-within:ring-[#07668c]/20 transition-all">
                 <select
-                  className="appearance-none bg-transparent flex-1 font-['Inter:Regular'] text-sm text-[#748087] outline-none cursor-pointer"
+                  className="appearance-none bg-transparent flex-1 font-['Inter:Regular'] text-sm text-[#748087] outline-none cursor-pointer focus:text-[#17242a]"
                   value={form.interest}
                   onChange={(e) => setForm({ ...form, interest: e.target.value })}
                 >
@@ -710,7 +745,7 @@ export default function AmigoFarms() {
             <div className="flex flex-col gap-2 items-start w-full">
               <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-sm">Message</p>
               <textarea
-                className="bg-white border border-[#dce3e3] flex h-[120px] items-start p-4 rounded-lg w-full text-sm font-['Inter:Regular'] text-[#17242a] placeholder:text-[#748087] outline-none focus:border-[#05658f] transition-colors resize-none"
+                className="bg-white border border-[#dce3e3] flex h-[120px] items-start p-4 rounded-lg w-full text-sm font-['Inter:Regular'] text-[#17242a] placeholder:text-[#748087] outline-none focus:border-[#07668c] focus:ring-4 focus:ring-[#07668c]/20 transition-all resize-none"
                 placeholder="How can we help?"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -724,7 +759,7 @@ export default function AmigoFarms() {
 
           {/* Contact info */}
           <div className="flex flex-1 flex-col gap-4 items-start w-full">
-            <div className="bg-[#073a55] flex flex-col gap-6 items-start p-6 md:p-8 rounded-2xl w-full">
+            <div className="bg-[#07668C] flex flex-col gap-6 items-start p-6 md:p-8 rounded-2xl w-full">
               <p className="font-['Lora:Bold'] font-bold text-white text-2xl whitespace-normal md:whitespace-nowrap">Head Office · Gujranwala</p>
               {[
                 { icon: imgMapPin, text: "G.T. Road, Ghakhar Mandi, District Gujranwala, Punjab." },
@@ -754,7 +789,7 @@ export default function AmigoFarms() {
             <div className="flex flex-wrap gap-2 items-start w-full">
               {["Executive Board", "Marketing", "Purchasing", "Accounts", "Logistics", "Veterinary Operations"].map((dept) => (
                 <div key={dept} className="bg-[#e6f2f5] flex items-start px-3 py-2 rounded-full shrink-0">
-                  <p className="font-['Inter:Semi_Bold'] font-semibold text-[#073a55] text-xs whitespace-nowrap">{dept}</p>
+                  <p className="font-['Inter:Semi_Bold'] font-semibold text-[#07668C] text-xs whitespace-nowrap">{dept}</p>
                 </div>
               ))}
             </div>
@@ -763,7 +798,7 @@ export default function AmigoFarms() {
       </div>
 
       {/* Footer */}
-      <div className="bg-[#052e43] flex flex-col gap-8 items-start overflow-hidden px-6 md:px-12 lg:px-20 py-12 lg:py-[72px] w-full">
+      <div className="bg-[#07668C] flex flex-col gap-8 items-start overflow-hidden px-6 md:px-12 lg:px-20 py-12 lg:py-[72px] w-full">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start w-full">
           <div className="flex flex-col gap-4 items-start shrink-0 w-full lg:w-[320px]">
             <div className="bg-white flex h-16 items-center justify-center overflow-hidden p-1 rounded-lg shrink-0 w-44">
