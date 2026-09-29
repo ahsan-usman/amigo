@@ -1,266 +1,17 @@
-import { useState, useEffect, useRef } from "react";
-
-function useCountUp(target: number, duration = 1800, active = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!active) return;
-    let start: number | null = null;
-    const step = (ts: number) => {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(ease * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [active, target, duration]);
-  return count;
-}
-
-function useInView(threshold = 0.25) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold]);
-  return { ref, inView };
-}
-
-const assetPathPrefix = "/assets";
-const imgHero = `${assetPathPrefix}/e3a2e.png`;
-const imgLogoArtwork = `${assetPathPrefix}/fc9a6.png`;
-const imgEggQualityPhotography = `${assetPathPrefix}/64cb4.png`;
-const imgHealthyChicksPhotography = `${assetPathPrefix}/40747.png`;
-const imgFeedPhotography = `${assetPathPrefix}/86b2c.png`;
-const imgPhotography = `${assetPathPrefix}/4786e.png`;
-const imgPhotography1 = `${assetPathPrefix}/1b1a6.png`;
-const imgPhotography2 = `${assetPathPrefix}/ae0e6.png`;
-const imgPhotography3 = `${assetPathPrefix}/33217.png`;
-const imgPhotography4 = `${assetPathPrefix}/0f430.png`;
-const imgMap = `${assetPathPrefix}/61f21.png`;
-const imgLogoArtwork1 = `${assetPathPrefix}/acaf0.png`;
-const imgArrowUpRight = `${assetPathPrefix}/5e74a.svg`;
-const imgArrowUpRight1 = `${assetPathPrefix}/6b1e4.svg`;
-const imgEgg = `${assetPathPrefix}/25410.svg`;
-const imgWarehouse = `${assetPathPrefix}/426b3.svg`;
-const imgWheat = `${assetPathPrefix}/0d704.svg`;
-const imgBird = `${assetPathPrefix}/1466e.svg`;
-const imgCalendarRange = `${assetPathPrefix}/3a9b0.svg`;
-const imgCircleCheck = `${assetPathPrefix}/cb810.svg`;
-const imgEye = `${assetPathPrefix}/f7e1d.svg`;
-const imgShieldCheck = `${assetPathPrefix}/63828.svg`;
-const imgHeartPulse = `${assetPathPrefix}/676ce.svg`;
-const imgSettings = `${assetPathPrefix}/c272e.svg`;
-const imgNetwork = `${assetPathPrefix}/82098.svg`;
-const imgHandshake = `${assetPathPrefix}/9b6d5.svg`;
-const imgShield = `${assetPathPrefix}/3fb24.svg`;
-const imgStar = `${assetPathPrefix}/edd7c.svg`;
-const imgHeart = `${assetPathPrefix}/f26b2.svg`;
-const imgZap = `${assetPathPrefix}/8a2e0.svg`;
-const imgLeaf = `${assetPathPrefix}/590ea.svg`;
-const imgHandshake1 = `${assetPathPrefix}/a200b.svg`;
-const imgShield1 = `${assetPathPrefix}/5efbc.svg`;
-const imgStethoscope = `${assetPathPrefix}/66c7d.svg`;
-const imgFlaskConical = `${assetPathPrefix}/23942.svg`;
-const imgScanBarcode = `${assetPathPrefix}/2d641.svg`;
-const imgChevronDown = `${assetPathPrefix}/95364.svg`;
-const imgMapPin = `${assetPathPrefix}/93f46.svg`;
-const imgMail = `${assetPathPrefix}/60bd1.svg`;
-const imgPhone = `${assetPathPrefix}/19227.svg`;
-const imgSmartphone = `${assetPathPrefix}/c7623.svg`;
-const imgRoute = `${assetPathPrefix}/d85f8.svg`;
-const imgMessageCircle = `${assetPathPrefix}/30fbf.svg`;
-const imgMessageCircle1 = `${assetPathPrefix}/47a51.svg`;
-const imgArrowUp = `${assetPathPrefix}/77693.svg`;
-
-function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const { ref, inView } = useInView(0.15);
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 0.65s ease ${delay}ms, transform 0.65s ease ${delay}ms`,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
-const valueCards = [
-  { accentFront: "#07668C", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgShield, num: "01", title: "Integrity", text: "Conducting all operations with honesty, transparency, and high ethical responsibility." },
-  { accentFront: "#f0a23a", accentBack: "#f0a23a", iconBgFront: "#fff1d8", icon: imgStar, num: "02", title: "Quality Excellence", text: "Upholding uncompromising standards across flock management, feed, and distribution." },
-  { accentFront: "#07668c", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgHeart, num: "03", title: "Animal Welfare", text: "Prioritizing bird health and comfort through responsible, veterinarian-supervised management." },
-  { accentFront: "#f0a23a", accentBack: "#f0a23a", iconBgFront: "#fff1d8", icon: imgZap, num: "04", title: "Innovation", text: "Continuously upgrading infrastructure, production methods, and technological systems." },
-  { accentFront: "#07668C", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgLeaf, num: "05", title: "Sustainability", text: "Utilizing natural resources responsibly to minimize environmental impact." },
-  { accentFront: "#07668c", accentBack: "#f0a23a", iconBgFront: "#e6f2f5", icon: imgHandshake1, num: "06", title: "Customer Commitment", text: "Delivering consistent product quality, competitive value, and dependable logistics." },
-];
-
-function ValueCard({ accentFront, accentBack, iconBgFront, icon, num, title, text, delay = 0 }: {
-  accentFront: string; accentBack: string; iconBgFront: string; icon: string;
-  num: string; title: string; text: string; delay?: number;
-}) {
-  const { ref, inView } = useInView(0.1);
-  return (
-    <div
-      ref={ref}
-      className="w-full lg:flex-1 h-[260px] relative"
-      style={{
-        perspective: "1000px",
-        opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(24px)",
-        transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
-      }}
-    >
-      {/* flip inner */}
-      <div
-        className="relative w-full h-full"
-        style={{
-          transformStyle: "preserve-3d",
-          transition: "transform 0.6s cubic-bezier(0.4,0.2,0.2,1)",
-        }}
-        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "rotateY(180deg)"; }}
-        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "rotateY(0deg)"; }}
-      >
-        {/* FRONT — light card */}
-        <div
-          className="absolute inset-0 rounded-2xl overflow-hidden shadow-[0px_8px_24px_-4px_rgba(18,52,67,0.07)] bg-white border border-[#dce3e3] flex flex-col items-start"
-          style={{ backfaceVisibility: "hidden" }}
-        >
-          <div className="h-1 w-full shrink-0" style={{ background: accentFront }} />
-          <div className="flex flex-1 flex-col gap-5 items-start p-7 w-full">
-            <div className="flex items-center justify-between w-full">
-              <div className="flex items-center justify-center rounded-[10px] shrink-0 size-11" style={{ background: iconBgFront }}>
-                <img alt="" className="size-[22px]" src={icon} />
-              </div>
-              <p className="font-['Lora:Bold'] font-bold leading-none text-5xl whitespace-nowrap" style={{ color: "rgba(5,101,143,0.10)" }}>{num}</p>
-            </div>
-            <div className="flex flex-col gap-2.5 items-start w-full">
-              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-[22px]">{title}</p>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-sm">{text}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* BACK — dark navy card */}
-        <div
-          className="absolute inset-0 rounded-2xl overflow-hidden shadow-[0px_16px_40px_-8px_rgba(7,58,85,0.35)] flex flex-col items-start"
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", background: "#07668C" }}
-        >
-          <div className="h-1 w-full shrink-0" style={{ background: accentBack }} />
-          <div className="flex flex-1 flex-col gap-5 items-start p-7 w-full">
-            <div className="flex items-center justify-between w-full">
-              <div className="flex items-center justify-center rounded-[10px] shrink-0 size-11" style={{ background: "rgba(255,255,255,0.10)" }}>
-                <img alt="" className="size-[22px] brightness-0 invert" src={icon} />
-              </div>
-              <p className="font-['Lora:Bold'] font-bold leading-none text-5xl whitespace-nowrap" style={{ color: "rgba(255,255,255,0.09)" }}>{num}</p>
-            </div>
-            <div className="flex flex-col gap-3 items-start w-full">
-              <p className="font-['Lora:Bold'] font-bold text-white text-[22px]">{title}</p>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#d5e4ea] text-sm">{text}</p>
-              <div className="mt-1 flex items-center gap-2">
-                <div className="h-px flex-1 bg-[rgba(255,255,255,0.15)]" />
-                <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-[11px] uppercase tracking-widest">Our value</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const stats = [
-  { icon: imgEgg, target: 400000, suffix: "+", label: "Commercial layer birds", accent: "#07668c", highlight: false },
-  { icon: imgWarehouse, target: 500000, suffix: "+", label: "Broiler capacity", accent: "#07668c", highlight: false },
-  { icon: imgWheat, target: 1500, suffix: "+ MT", label: "Feed output / month", accent: "#f0a23a", highlight: true },
-  { icon: imgBird, target: 500000, suffix: "+", label: "Commercial broiler breeders", accent: "#07668c", highlight: false },
-  { icon: imgCalendarRange, target: 50, suffix: "+ Yrs", label: "Heritage since the 1970s", accent: "#07668C", highlight: false },
-];
-
-function StatTile({ icon, target, suffix, label, accent, highlight, active, index }: {
-  icon: string; target: number; suffix: string; label: string; accent: string; highlight: boolean; active: boolean; index: number;
-}) {
-  const count = useCountUp(target, 1600 + index * 100, active);
-  const display = count >= 1000 ? count.toLocaleString() : count;
-  return (
-    <div
-      className="relative flex flex-1 flex-col gap-4 items-start justify-center py-8 px-7"
-      style={{
-        opacity: active ? 1 : 0,
-        transform: active ? "translateY(0)" : "translateY(20px)",
-        transitionDelay: `${index * 80}ms`,
-      }}
-    >
-      <div
-        className="flex items-center justify-center size-11 rounded-xl"
-        style={{ background: highlight ? `${accent}22` : "#f0f5f7" }}
-      >
-        <img alt="" className="size-6" src={icon} />
-      </div>
-
-      <div className="flex flex-col gap-1">
-        <p
-          className="font-['Lora:Bold'] font-bold leading-none tabular-nums"
-          style={{ fontSize: "clamp(26px,2.2vw,36px)", color: highlight ? accent : "#17242a" }}
-        >
-          {display.toLocaleString()}{suffix}
-        </p>
-        <p className="font-['Inter:Regular'] font-normal leading-[1.4] text-[#47545a] text-[13px]">{label}</p>
-      </div>
-    </div>
-  );
-}
-
-function StatsSection() {
-  const { ref, inView } = useInView(0.2);
-  return (
-    <div className="bg-[#faf7f2] flex flex-col items-start pt-8 pb-8 px-6 md:px-12 lg:px-20 w-full">
-      <div
-        ref={ref}
-        className="bg-white overflow-hidden rounded-2xl shadow-[0px_20px_60px_-12px_rgba(18,52,67,0.14)] w-full"
-        style={{
-          opacity: inView ? 1 : 0,
-          transform: inView ? "translateY(0)" : "translateY(32px)",
-          transition: "opacity 0.7s ease, transform 0.7s ease",
-        }}
-      >
-        {/* top accent stripe */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#07668C] via-[#07668c] to-[#f0a23a]" />
-
-        <div className="flex flex-col lg:flex-row items-stretch divide-y lg:divide-y-0 lg:divide-x divide-[#e8eeef]">
-          {stats.map((s, i) => (
-            <StatTile key={s.label} {...s} active={inView} index={i} />
-          ))}
-        </div>
-
-        {/* bottom label */}
-        <div className="border-t border-[#f0f4f5] px-7 py-3 flex items-center gap-2">
-          <div className="size-1.5 rounded-full bg-[#f0a23a] animate-pulse" />
-          <p className="font-['Inter:Semi_Bold'] font-semibold text-[#748087] text-[11px] uppercase tracking-widest">
-            Live operational figures — Amigo Farms (Pvt.) Ltd.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const navLinks: { label: string; id: string }[] = [
-  { label: "About", id: "about" },
-  { label: "Heritage", id: "heritage" },
-  { label: "Values", id: "values" },
-  { label: "Operations", id: "operations" },
-  { label: "Quality", id: "quality" },
-  { label: "Contact Us", id: "contact" },
-];
+import { useState, useEffect } from "react";
+import { FadeIn } from "./components/FadeIn";
+import { ValueCard } from "./components/ValueCard";
+import { StatsSection } from "./components/StatsSection";
+import { navLinks, valueCards } from "./constants/data";
+import { 
+  imgHero, imgLogoArtwork, imgEggQualityPhotography, imgHealthyChicksPhotography, 
+  imgFeedPhotography, imgPhotography, imgPhotography1, imgPhotography2, imgPhotography3,
+  imgCircleCheck, imgEye, imgShieldCheck, imgHeartPulse, 
+  imgSettings, imgNetwork, imgHandshake, imgShield1, imgStethoscope, 
+  imgFlaskConical, imgScanBarcode, imgChevronDown, imgMap, imgMapPin, imgMail, imgPhone, 
+  imgSmartphone, imgRoute, imgMessageCircle, imgMessageCircle1, imgArrowUp, 
+  imgArrowUpRight, imgArrowUpRight1, imgLogoArtwork1 
+} from "./constants/assets";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -407,7 +158,7 @@ export default function AmigoFarms() {
               {`Today, Amigo Layer Farms maintains a flock of over 400,000 commercial layer birds, making us one of the region's primary egg producers. Through continuous investment in automated climate-controlled housing, scientifically formulated feed, and veterinary management, we deliver fresh, nutritious eggs to wholesalers, retailers, food service providers, and consumers nationwide.`}
             </p>
           </div>
-          <div className="flex flex-1 flex-col gap-4 items-start">
+          <div className="hidden lg:flex flex-1 flex-col gap-4 items-start">
             <div className="h-[330px] relative rounded-2xl w-full overflow-hidden">
               <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-2xl" src={imgEggQualityPhotography} />
             </div>
@@ -442,6 +193,29 @@ export default function AmigoFarms() {
                 </div>
               ))}
             </div>
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Farm Tour Video Section */}
+      <div className="bg-[#faf7f2] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 pb-16 lg:pb-26 w-full">
+        <FadeIn className="flex flex-col gap-4 items-start w-full">
+          <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">Take a tour</p>
+          <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Experience Amigo Farms</p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base max-w-3xl">Step inside our state-of-the-art facilities and see our commitment to quality, health, and automation firsthand.</p>
+        </FadeIn>
+        
+        <FadeIn delay={100} className="w-full">
+          <div className="w-full rounded-2xl overflow-hidden shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] bg-black relative flex items-center justify-center">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              controls
+              className="w-full h-auto max-h-[80vh] object-contain"
+              src="/assets/video/video.mp4"
+            />
           </div>
         </FadeIn>
       </div>
@@ -575,73 +349,72 @@ export default function AmigoFarms() {
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">Control at every critical stage keeps quality measurable, welfare protected, and supply dependable.</p>
         </div>
 
-        <div className="flex flex-col gap-6 items-start w-full">
-          {/* Primary row */}
-          <div className="flex flex-col lg:flex-row gap-6 items-start w-full">
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[590px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
-              <div className="h-[200px] md:h-[290px] relative shrink-0 w-full">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography} />
-              </div>
-              <div className="flex flex-1 flex-col gap-3 items-start p-6 w-full">
-                <div className="bg-[#fff1d8] flex items-start px-3 py-2 rounded-full shrink-0">
-                  <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-xs whitespace-nowrap">~400,000 commercial layers</p>
-                </div>
-                <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">01 Commercial Layer Farming</p>
-                <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">Fully automated environmental control housing, automated egg collection, hygienic grading, and temperature-controlled storage.</p>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+          {/* Card 1: Horizontal featured card */}
+          <div className="lg:col-span-8 bg-white flex flex-col md:flex-row rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[240px] md:h-auto md:w-[45%] lg:w-[50%] relative shrink-0 overflow-hidden">
+              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography} />
             </div>
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
-              <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography1} />
+            <div className="flex flex-col gap-4 items-start justify-center p-8 lg:p-12 w-full md:w-[55%] lg:w-[50%]">
+              <div className="bg-[#fff1d8] flex items-start px-3 py-1.5 rounded-full shrink-0">
+                <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-xs whitespace-nowrap">~400,000 commercial layers</p>
               </div>
-              <div className="flex flex-1 flex-col gap-3 items-start p-6 w-full">
-                <div className="bg-[#fff1d8] flex items-start px-3 py-2 rounded-full shrink-0">
-                  <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-xs whitespace-nowrap">~500,000 broiler capacity | 10 farm locations</p>
-                </div>
-                <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">{`02 Breeder & Broiler Farming`}</p>
-                <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">Environmentally controlled dark houses spread across 10 strategic farm locations, managed by specialized production teams using internal day-old chicks and feed.</p>
-              </div>
-            </div>
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
-              <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography2} />
-              </div>
-              <div className="flex flex-1 flex-col gap-3 items-start p-6 w-full">
-                <div className="bg-[#fff1d8] flex items-start px-3 py-2 rounded-full shrink-0">
-                  <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-xs whitespace-nowrap">Amigo Feed Mill, 1,500+ MT / month</p>
-                </div>
-                <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">03 Feed Milling</p>
-                <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">High-grade pellet feed formulated specifically for Layer, Breeder, and Broiler nutrition, produced on independent, company-owned land with in-house testing protocols.</p>
-              </div>
+              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-3xl lg:text-4xl">01 Commercial Layer Farming</p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">Fully automated environmental control housing, automated egg collection, hygienic grading, and temperature-controlled storage.</p>
             </div>
           </div>
-          {/* Supporting row */}
-          <div className="flex flex-col lg:flex-row gap-6 items-start w-full">
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
-              <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgPhotography3} />
-              </div>
-              <div className="flex flex-1 flex-col gap-3 items-start p-6 w-full">
-                <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">04 Hatchery Operations</p>
-                <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">Strategic multi-location hatcheries housing top-tier commercial equipment, supplying day-old chicks.</p>
-              </div>
+
+          {/* Card 2: Vertical featured card */}
+          <div className="lg:col-span-4 bg-[#07668C] flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] md:h-[240px] relative shrink-0 w-full overflow-hidden">
+              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography1} />
             </div>
-            <div className="bg-white flex flex-1 flex-col h-auto lg:h-[460px] items-start rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)]">
-              <div className="h-[160px] md:h-[190px] relative shrink-0 w-full">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" />
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <div className="bg-[rgba(255,255,255,0.1)] flex items-start px-3 py-1.5 rounded-full shrink-0">
+                <p className="font-['Inter:Bold'] font-bold text-white text-xs whitespace-nowrap">~500,000 broiler capacity</p>
               </div>
-              <div className="flex flex-1 flex-col gap-3 items-start p-6 w-full">
-                <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">{`05 Distribution & Logistics`}</p>
-                <p className="font-['Inter:Regular'] font-normal leading-[1.55] text-[#47545a] text-sm">All marketing and sales operations are managed in-house to guarantee quality from farm to client, with a specialized delivery fleet for feed transport, plus temperature-regulated vans dedicated to day-old chick delivery, coordinated through the Marketing Desk at the Head Office in Gujranwala.</p>
+              <p className="font-['Lora:Bold'] font-bold text-white text-2xl">{`02 Breeder & Broiler Farming`}</p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#d5e4ea] text-sm">Environmentally controlled dark houses spread across 10 strategic farm locations, managed by specialized production teams using internal day-old chicks and feed.</p>
+            </div>
+          </div>
+
+          {/* Card 3: Standard Vertical */}
+          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
+              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography2} />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <div className="bg-[#e6f2f5] flex items-start px-3 py-1.5 rounded-full shrink-0">
+                <p className="font-['Inter:Bold'] font-bold text-[#07668C] text-xs whitespace-nowrap">Amigo Feed Mill, 1,500+ MT/month</p>
               </div>
+              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">03 Feed Milling</p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#47545a] text-sm">High-grade pellet feed formulated specifically for Layer, Breeder, and Broiler nutrition, produced on independent, company-owned land with in-house testing protocols.</p>
+            </div>
+          </div>
+
+          {/* Card 4: Standard Vertical */}
+          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
+              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1651454736368-e65cff3b37e9?q=80&w=1000&auto=format&fit=crop" />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl mt-1.5">04 Hatchery Operations</p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#47545a] text-sm">Strategic multi-location hatcheries housing top-tier commercial equipment, supplying day-old chicks to farmers across the region.</p>
+            </div>
+          </div>
+
+          {/* Card 5: Standard Vertical */}
+          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
+              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl mt-1.5">{`05 Distribution & Logistics`}</p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#47545a] text-sm">Marketing and sales operations are managed in-house with a specialized delivery fleet for feed and temperature-regulated vans dedicated to chicks.</p>
             </div>
           </div>
         </div>
 
-        <button onClick={() => scrollTo("contact")} className="bg-[#f0a23a] border border-[#f0a23a] flex gap-3 h-13 items-center justify-center px-6 rounded-full shrink-0 hover:bg-[#e8952e] transition-colors">
-          <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-sm whitespace-nowrap">Get In Touch</p>
-          <img alt="" className="size-4" src={imgArrowUpRight} />
-        </button>
       </div>
 
       {/* Quality Assurance */}
@@ -786,13 +559,6 @@ export default function AmigoFarms() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 items-start w-full">
-              {["Executive Board", "Marketing", "Purchasing", "Accounts", "Logistics", "Veterinary Operations"].map((dept) => (
-                <div key={dept} className="bg-[#e6f2f5] flex items-start px-3 py-2 rounded-full shrink-0">
-                  <p className="font-['Inter:Semi_Bold'] font-semibold text-[#07668C] text-xs whitespace-nowrap">{dept}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -821,8 +587,15 @@ export default function AmigoFarms() {
               <p className="font-['Inter:Regular'] font-normal text-[#d5e4ea] text-sm">+92 55 3882472 · +92 336 4688494</p>
             </div>
             <div className="flex flex-1 flex-col gap-3 items-start w-full md:w-auto">
-              <p className="font-['Inter:Extra_Bold'] font-extrabold text-[#f0a23a] text-xs uppercase whitespace-nowrap">Departments</p>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.7] text-[#d5e4ea] text-sm">Executive Board · Marketing · Purchasing · Accounts · Logistics · Veterinary Operations</p>
+              <p className="font-['Inter:Extra_Bold'] font-extrabold text-[#f0a23a] text-xs uppercase whitespace-nowrap tracking-wider">Departments</p>
+              <div className="flex flex-wrap items-center gap-y-2 text-[#d5e4ea] text-[15px] font-['Inter:Regular']">
+                {["Executive Board", "Marketing", "Purchasing", "Accounts", "Logistics", "Veterinary Operations"].map((dept, index, arr) => (
+                  <span key={dept} className="flex items-center whitespace-nowrap">
+                    <span>{dept}</span>
+                    {index < arr.length - 1 && <span className="mx-2.5 font-bold">·</span>}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

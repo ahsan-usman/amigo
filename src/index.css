@@ -41,3 +41,9 @@
   font-style: normal;
   font-weight: 400;
 }
+
+@layer base {
+  button {
+    cursor: pointer;
+  }
+}
