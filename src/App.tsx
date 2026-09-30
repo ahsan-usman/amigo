@@ -530,7 +530,10 @@ export default function AmigoFarms() {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </div>
-            <button className="bg-[#f0a23a] border border-[#f0a23a] flex gap-3 h-13 items-center justify-center px-6 rounded-full hover:bg-[#e8952e] transition-colors">
+            <button onClick={() => {
+              const body = `Name: ${form.name}%0ACompany: ${form.company}%0APhone: ${form.phone}%0AEmail: ${form.email}%0AInterest: ${form.interest}%0A%0A${form.message}`;
+              window.location.href = `mailto:amigofarmspvtltd@gmail.com?subject=Website Inquiry from ${form.name || 'Visitor'}&body=${body}`;
+            }} className="bg-[#f0a23a] border border-[#f0a23a] flex gap-3 h-13 items-center justify-center px-6 rounded-full hover:bg-[#e8952e] transition-colors">
               <p className="font-['Inter:Bold'] font-bold text-[#17242a] text-sm whitespace-nowrap">Submit</p>
               <img alt="" className="size-4" src={imgArrowUpRight} />
             </button>
