@@ -49,7 +49,7 @@ export default function AmigoFarms() {
       <div className="relative flex flex-col gap-6 w-full min-h-[100dvh] md:min-h-[800px] pb-24 pt-32 md:pt-44 px-6 md:px-16 lg:px-24 overflow-hidden items-start">
         <div aria-hidden className="absolute inset-0 pointer-events-none">
           <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
-          <div className="absolute bg-gradient-to-r from-[rgba(6,29,43,0.91)] inset-0 to-[82%] to-[rgba(9,39,56,0.13)] via-[50.84%] via-[rgba(9,39,56,0.61)]" />
+          <div className="absolute bg-gradient-to-r from-[#07668C] inset-0 to-[100%] to-transparent via-[60%] via-[#07668C]/80" />
         </div>
 
         {/* Header */}
