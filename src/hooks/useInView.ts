@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export function useInView() {
+export function useInView(threshold: number = 0) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -8,7 +8,7 @@ export function useInView() {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) setInView(true); }, 
-      { threshold: 0, rootMargin: "-5% 0px" }
+      { threshold, rootMargin: "-5% 0px" }
     );
     obs.observe(el);
     return () => obs.disconnect();

@@ -13,11 +13,11 @@ export const valueCards = [
 ];
 
 export const stats = [
-  { icon: imgEgg, target: 400000, suffix: "+", label: "Commercial layer birds", accent: "#07668c", highlight: false },
-  { icon: imgWarehouse, target: 500000, suffix: "+", label: "Broiler capacity", accent: "#07668c", highlight: false },
-  { icon: imgWheat, target: 1500, suffix: "+ MT", label: "Feed output / month", accent: "#f0a23a", highlight: true },
-  { icon: imgBird, target: 500000, suffix: "+", label: "Commercial broiler breeders", accent: "#07668c", highlight: false },
-  { icon: imgCalendarRange, target: 50, suffix: "+ Yrs", label: "Heritage since the 1970s", accent: "#07668C", highlight: false },
+  { id: "commercial_layers", icon: imgEgg, target: 400000, suffix: "+", label: "Commercial layer birds", accent: "#07668c", highlight: false },
+  { id: "broiler_capacity", icon: imgWarehouse, target: 500000, suffix: "+", label: "Broiler capacity", accent: "#07668c", highlight: false },
+  { id: "feed_output", icon: imgWheat, target: 1500, suffix: "+ MT", label: "Feed output / month", accent: "#f0a23a", highlight: true },
+  { id: "broiler_breeders", icon: imgBird, target: 500000, suffix: "+", label: "Commercial broiler breeders", accent: "#07668c", highlight: false },
+  { id: "heritage", icon: imgCalendarRange, target: 50, suffix: "+ Yrs", label: "Heritage since the 1970s", accent: "#07668C", highlight: false },
 ];
 
 export const navLinks: { label: string; id: string }[] = [

@@ -1,10 +1,12 @@
 import { useInView } from "../hooks/useInView";
 import { useCountUp } from "../hooks/useCountUp";
+import { useTranslation } from "react-i18next";
 import { stats } from "../constants/data";
 
-function StatTile({ icon, target, suffix, label, accent, highlight, active, index }: {
-  icon: string; target: number; suffix: string; label: string; accent: string; highlight: boolean; active: boolean; index: number;
+function StatTile({ id, icon, target, suffix, label, accent, highlight, active, index }: {
+  id: string; icon: string; target: number; suffix: string; label: string; accent: string; highlight: boolean; active: boolean; index: number;
 }) {
+  const { t } = useTranslation();
   const count = useCountUp(target, 1600 + index * 100, active);
   const display = count >= 1000 ? count.toLocaleString() : count;
   return (
@@ -30,7 +32,7 @@ function StatTile({ icon, target, suffix, label, accent, highlight, active, inde
         >
           {display.toLocaleString()}{suffix}
         </p>
-        <p className="font-['Inter:Regular'] font-normal leading-[1.4] text-[#47545a] text-[13px]">{label}</p>
+        <p className="font-['Inter:Regular'] font-normal leading-[1.4] text-[#47545a] text-[13px]">{t(`stats.${id}`)}</p>
       </div>
     </div>
   );
@@ -38,6 +40,7 @@ function StatTile({ icon, target, suffix, label, accent, highlight, active, inde
 
 export function StatsSection() {
   const { ref, inView } = useInView(0.2);
+  const { t } = useTranslation();
   return (
     <div className="bg-[#faf7f2] flex flex-col items-start pt-8 pb-8 px-6 md:px-12 lg:px-20 w-full">
       <div
@@ -50,7 +53,7 @@ export function StatsSection() {
         }}
       >
         {/* top accent stripe */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#07668C] via-[#07668c] to-[#f0a23a]" />
+        <div className="h-1 w-full bg-gradient-to-r rtl:bg-gradient-to-l from-[#07668C] via-[#07668c] to-[#f0a23a]" />
 
         <div className="flex flex-col lg:flex-row items-stretch divide-y lg:divide-y-0 lg:divide-x divide-[#e8eeef]">
           {stats.map((s, i) => (
@@ -62,7 +65,7 @@ export function StatsSection() {
         <div className="border-t border-[#f0f4f5] px-7 py-3 flex items-center gap-2">
           <div className="size-1.5 rounded-full bg-[#f0a23a] animate-pulse" />
           <p className="font-['Inter:Semi_Bold'] font-semibold text-[#748087] text-[11px] uppercase tracking-widest">
-            Live operational figures — Amigo Farms (Pvt.) Ltd.
+            {t('stats.live_figures')}
           </p>
         </div>
       </div>

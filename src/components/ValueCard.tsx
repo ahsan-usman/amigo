@@ -1,10 +1,12 @@
 import { useInView } from "../hooks/useInView";
+import { useTranslation } from "react-i18next";
 
 export function ValueCard({ accentFront, accentBack, iconBgFront, icon, num, title, text, delay = 0 }: {
   accentFront: string; accentBack: string; iconBgFront: string; icon: string;
   num: string; title: string; text: string; delay?: number;
 }) {
   const { ref, inView } = useInView(0.1);
+  const { t } = useTranslation();
   return (
     <div
       ref={ref}
@@ -40,8 +42,8 @@ export function ValueCard({ accentFront, accentBack, iconBgFront, icon, num, tit
               <p className="font-['Lora:Bold'] font-bold leading-none text-5xl whitespace-nowrap" style={{ color: "rgba(5,101,143,0.10)" }}>{num}</p>
             </div>
             <div className="flex flex-col gap-2.5 items-start w-full">
-              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-[22px]">{title}</p>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-sm">{text}</p>
+              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-[22px]">{t(`values.items.${title}.title`)}</p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-sm">{t(`values.items.${title}.text`)}</p>
             </div>
           </div>
         </div>
@@ -60,11 +62,11 @@ export function ValueCard({ accentFront, accentBack, iconBgFront, icon, num, tit
               <p className="font-['Lora:Bold'] font-bold leading-none text-5xl whitespace-nowrap" style={{ color: "rgba(255,255,255,0.09)" }}>{num}</p>
             </div>
             <div className="flex flex-col gap-3 items-start w-full">
-              <p className="font-['Lora:Bold'] font-bold text-white text-[22px]">{title}</p>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#d5e4ea] text-sm">{text}</p>
+              <p className="font-['Lora:Bold'] font-bold text-white text-[22px]">{t(`values.items.${title}.title`)}</p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#d5e4ea] text-sm">{t(`values.items.${title}.text`)}</p>
               <div className="mt-1 flex items-center gap-2">
                 <div className="h-px flex-1 bg-[rgba(255,255,255,0.15)]" />
-                <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-[11px] uppercase tracking-widest">Our value</p>
+                <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-[11px] uppercase tracking-widest">{t('values.our_value')}</p>
               </div>
             </div>
           </div>

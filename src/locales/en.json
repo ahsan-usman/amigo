@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "about": "About",
+    "heritage": "Heritage",
+    "values": "Values",
+    "operations": "Operations",
+    "quality": "Quality",
+    "contact": "Contact Us",
+    "getInTouch": "Get In Touch"
+  },
+  "hero": {
+    "heritage": "Heritage since the mid-1970s · Gujranwala, Pakistan",
+    "title": "Amigo Farms",
+    "subtitle": "Amigo Layer Farms · Amigo Chicks · Amigo Feed Mill",
+    "desc": "Amigo Farms (Pvt.) Ltd. is a leading semi-integrated poultry enterprise supplying high-quality, hygienic, and safe table eggs, day-old chicks, and poultry feed across Pakistan. Driven by modern farming practices, strict biosecurity, and a deep-rooted commitment to national food security, we consistently set benchmark standards in operational excellence and animal welfare.",
+    "getInTouch": "Get In Touch",
+    "ourHeritage": "Our Heritage"
+  },
+  "stats": {
+    "commercial_layers": "Commercial layer birds",
+    "broiler_capacity": "Broiler capacity",
+    "feed_output": "Feed output / month",
+    "broiler_breeders": "Commercial broiler breeders",
+    "heritage": "Heritage since the 1970s",
+    "live_figures": "Live operational figures — Amigo Farms (Pvt.) Ltd."
+  },
+  "about": {
+    "tagline": "About us",
+    "title": "A semi-integrated poultry network, built to last",
+    "p1": "Amigo Farms (Pvt.) Ltd. is a leading, semi-integrated poultry enterprise dedicated to supplying high-quality, hygienic, and safe table eggs, day-old chicks, and poultry feed across Pakistan.",
+    "p2": "Our heritage traces back to the mid-1970s. With over five decades of experience, we have built deep industry expertise, robust operational capabilities, and an enduring reputation grounded in trust and quality.",
+    "p3": "Today, Amigo Layer Farms maintains a flock of over 400,000 commercial layer birds, making us one of the region's primary egg producers. Through continuous investment in automated climate-controlled housing, scientifically formulated feed, and veterinary management, we deliver fresh, nutritious eggs to wholesalers, retailers, food service providers, and consumers nationwide.",
+    "under_roof": "Under one roof",
+    "under_roof_sub": "One coordinated network, quality controlled end to end.",
+    "point1": "Amigo Layer Farms: commercial table egg production",
+    "point2": "Amigo Chicks: day-old broiler chick hatcheries",
+    "point3": "Amigo Feed Mill: pellet feed for layer, breeder & broiler",
+    "point4": "In-house distribution & logistics from farm to client"
+  },
+  "tour": {
+    "tagline": "Take a tour",
+    "title": "Experience Amigo Farms",
+    "desc": "Step inside our state-of-the-art facilities and see our commitment to quality, health, and automation firsthand."
+  },
+  "heritage": {
+    "tagline": "History & heritage",
+    "title": "Five decades of purposeful progress",
+    "quote": "A Legacy Built on Vision, Quality, and Innovation.",
+    "era1": "Mid-1970s",
+    "era1_title": "The Early Foundation",
+    "era1_desc": "The story began with Mr. Sajjad Haider Rana, who started a modest backyard poultry venture. His entrepreneurial spirit led to expanding into commercial broiler and layer farming during the industry's early days in Pakistan, a leadership recognized when he was elected Chairman of the Pakistan Poultry Association (Punjab) in 1982–83. By the mid-1980s, the company established parent stock (PS) breeder farms and installed its first hatcheries, launching day-old broiler chicks under the iconic 'Ahsan Chicks' brand, a name that remains trusted by poultry farmers for over five decades.",
+    "era2": "1990s–2000s",
+    "era2_title": "Expansion & Innovation",
+    "era2_desc": "The business strengthened its position in the poultry value chain by introducing layer breeder stock and importing one of Pakistan's earliest Grandparent (GP) broiler flocks, operated between 2000–2007. To ensure complete control over feed quality, Amigo Feeds was later established, developing specialized pellet feed tailored for internal breeder, layer, and broiler operations.",
+    "era3": "2004–Present",
+    "era3_title": "The Next Generation & Modernization",
+    "era3_desc": "Under the leadership of Usman Anwar Rana, who joined in 2004, the enterprise entered a new era with the formal establishment of Amigo Farms (Pvt.) Ltd. Modernization became the central focus, integrating operations into a technology-driven system capable of meeting modern market demands. Today, Mr. Sajjad Haider Rana continues his agricultural legacy through his dairy venture, while his foundational vision inspires Amigo Farms' continued growth."
+  },
+  "vision": {
+    "tagline": "Our vision",
+    "desc": "To be recognized as Pakistan's most trusted and innovative poultry farming enterprise, delivering superior-quality eggs and poultry products while advancing sustainable agricultural practices and strengthening national food security."
+  },
+  "mission": {
+    "tagline": "Our mission",
+    "items": {
+      "Product Safety": { "title": "Product Safety", "text": "Produce safe, nutritious, high-quality eggs and healthy day-old chicks that consistently exceed customer expectations." },
+      "Flock Welfare": { "title": "Flock Welfare", "text": "Maintain the highest standards of poultry health, housing comfort, and biosecurity protocols." },
+      "Modernization": { "title": "Modernization", "text": "Adopt cutting-edge technologies and automated systems for maximum operational efficiency." },
+      "Supply Chain Impact": { "title": "Supply Chain Impact", "text": "Positively contribute to Pakistan's agricultural economy and food supply chain." },
+      "Ethical Relationships": { "title": "Ethical Relationships", "text": "Build long-lasting partnerships with customers, suppliers, and stakeholders rooted in integrity and reliability." }
+    }
+  },
+  "values": {
+    "tagline": "Core values",
+    "title": "Six principles, one carton",
+    "desc": "The standards behind every bird, every batch, and every delivery.",
+    "commitment": "Our commitment",
+    "commitment_desc": "Every principle is lived daily — from the feed mill to the delivery van.",
+    "years": "Years of practice",
+    "our_value": "Our value",
+    "items": {
+      "Integrity": { "title": "Integrity", "text": "Conducting all operations with honesty, transparency, and high ethical responsibility." },
+      "Quality Excellence": { "title": "Quality Excellence", "text": "Upholding uncompromising standards across flock management, feed, and distribution." },
+      "Animal Welfare": { "title": "Animal Welfare", "text": "Prioritizing bird health and comfort through responsible, veterinarian-supervised management." },
+      "Innovation": { "title": "Innovation", "text": "Continuously upgrading infrastructure, production methods, and technological systems." },
+      "Sustainability": { "title": "Sustainability", "text": "Utilizing natural resources responsibly to minimize environmental impact." },
+      "Customer Commitment": { "title": "Customer Commitment", "text": "Delivering consistent product quality, competitive value, and dependable logistics." }
+    }
+  },
+  "operations": {
+    "tagline": "Operations & infrastructure",
+    "title": "A semi-integrated network across five verticals",
+    "desc": "Control at every critical stage keeps quality measurable, welfare protected, and supply dependable.",
+    "c1_badge": "~400,000 commercial layers",
+    "c1_title": "01 Commercial Layer Farming",
+    "c1_desc": "Fully automated environmental control housing, automated egg collection, hygienic grading, and temperature-controlled storage.",
+    "c2_badge": "~500,000 broiler capacity",
+    "c2_title": "02 Breeder & Broiler Farming",
+    "c2_desc": "Environmentally controlled dark houses spread across 10 strategic farm locations, managed by specialized production teams using internal day-old chicks and feed.",
+    "c3_badge": "Amigo Feed Mill, 1,500+ MT/month",
+    "c3_title": "03 Feed Milling",
+    "c3_desc": "High-grade pellet feed formulated specifically for Layer, Breeder, and Broiler nutrition, produced on independent, company-owned land with in-house testing protocols.",
+    "c4_title": "04 Hatchery Operations",
+    "c4_desc": "Strategic multi-location hatcheries housing top-tier commercial equipment, supplying day-old chicks to farmers across the region.",
+    "c5_title": "05 Distribution & Logistics",
+    "c5_desc": "Marketing and sales operations are managed in-house with a specialized delivery fleet for feed and temperature-regulated vans dedicated to chicks."
+  },
+  "quality": {
+    "tagline": "Quality assurance & biosecurity",
+    "title": "Trust, protected at every gate",
+    "desc": "Layered controls protect flock health, product safety, and every customer we serve.",
+    "items": {
+      "Strict Biosecurity Protocols": { "title": "Strict Biosecurity Protocols", "text": "Rigid farm-entry controls, vehicular sanitation, and strict disease prevention safeguards." },
+      "Veterinary Supervision": { "title": "Veterinary Supervision", "text": "Ongoing health assessments, strict vaccination schedules, and specialized farm veterinarians." },
+      "Scientific Nutrition": { "title": "Scientific Nutrition", "text": "In-house laboratory analysis of raw ingredients and custom-formulated diets." },
+      "Hygienic Handling & Traceability": { "title": "Hygienic Handling & Traceability", "text": "Automated grading and comprehensive batch record-keeping for complete supply-chain accountability." }
+    }
+  },
+  "legacy": {
+    "quote": "\"A Legacy Built on Vision, Quality, and Innovation, from a backyard poultry venture in the 1970s to a semi-integrated enterprise spanning layers, breeders, feed, and hatcheries.\"",
+    "brands": "Amigo Farms · Amigo Layer Farms · Amigo Chicks · Amigo Feed Mill"
+  },
+  "contact": {
+    "tagline": "Contact us",
+    "title": "Start a conversation with our team",
+    "desc": "Tell us what you need. Our Gujranwala team will connect you with the right department.",
+    "form": {
+      "name": "Name",
+      "name_ph": "Your full name",
+      "company": "Company",
+      "company_ph": "Company name",
+      "phone": "Phone",
+      "phone_ph": "+92 300 0000000",
+      "email": "Email",
+      "email_ph": "name@company.com",
+      "interest": "I'm interested in",
+      "interest_ph": "Table Eggs · Day-Old Chicks · Poultry Feed · Other",
+      "int_eggs": "Table Eggs",
+      "int_chicks": "Day-Old Chicks",
+      "int_feed": "Poultry Feed",
+      "int_other": "Other",
+      "message": "Message",
+      "message_ph": "How can we help?",
+      "submit": "Submit"
+    },
+    "info": {
+      "hq": "Head Office · Gujranwala",
+      "address": "G.T. Road, Ghakhar Mandi, District Gujranwala, Punjab.",
+      "distance": "45 km from Lahore, Punjab, Pakistan",
+      "chat": "Chat on WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Trusted poultry. Scientific care. Nourishing Pakistan since the 1970s.",
+    "quick_links": "Quick links",
+    "contact": "Contact",
+    "departments": "Departments",
+    "dept_executive": "Executive Board",
+    "dept_marketing": "Marketing",
+    "dept_purchasing": "Purchasing",
+    "dept_accounts": "Accounts",
+    "dept_logistics": "Logistics",
+    "dept_veterinary": "Veterinary Operations"
+  }
+}
