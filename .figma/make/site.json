@@ -1,7 +1,11 @@
 {
-  "description": "This web application streamlines project management by offering tools for task tracking, team collaboration, and progress monitoring, enhancing productivity for teams.",
+  "title": "Amigo Farms | Quality Poultry, Feed, and Hatchery",
+  "description": "A legacy built on vision, quality, and innovation. Amigo Farms is a semi-integrated enterprise spanning layers, breeders, feed, and hatcheries, serving Pakistan since the 1970s.",
   "robots": {
-    "index": false
+    "index": true
+  },
+  "openGraph": {
+    "image": "https://www.amigofarm.com/assets/e3a2e.png"
   },
   "accessibility": {
     "addBypassLinks": false,
