@@ -54,7 +54,7 @@ export default function AmigoFarms() {
       {/* Hero */}
       <div className="relative flex flex-col gap-6 w-full min-h-[100dvh] md:min-h-[800px] pb-24 pt-32 md:pt-44 px-6 md:px-16 lg:px-24 overflow-hidden items-start">
         <div aria-hidden className="absolute inset-0 pointer-events-none">
-          <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
+          <img alt="Amigo Farms Hero Background" className="absolute max-w-none object-cover size-full" src={imgHero} />
           <div className="absolute bg-gradient-to-r from-[#07668C] inset-0 to-[100%] to-transparent via-[60%] via-[#07668C]/80" />
         </div>
 
@@ -121,9 +121,9 @@ export default function AmigoFarms() {
           <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-xs uppercase">
             Heritage since the mid-1970s · Gujranwala, Pakistan
           </p>
-          <p className="font-['Lora:Bold'] font-bold leading-[0.98] text-5xl md:text-[72px] text-white">
+          <h1 className="font-['Lora:Bold'] font-bold leading-[0.98] text-5xl md:text-[72px] text-white">
             Amigo Farms
-          </p>
+          </h1>
           <p className="font-['Inter:Bold'] font-bold leading-[1.4] text-[#f0a23a] text-lg md:text-xl">
             Amigo Layer Farms · Amigo Chicks · Amigo Feed Mill
           </p>
@@ -152,7 +152,7 @@ export default function AmigoFarms() {
           <div className="flex flex-1 flex-col gap-6 items-start">
             <div className="flex flex-col gap-4 items-start w-full">
               <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">About us</p>
-              <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">A semi-integrated poultry network, built to last</p>
+              <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">A semi-integrated poultry network, built to last</h2>
             </div>
             <p className="font-['Inter:Regular'] font-normal leading-[1.7] text-[#47545a] text-base">
               Amigo Farms (Pvt.) Ltd. is a leading, semi-integrated poultry enterprise dedicated to supplying high-quality, hygienic, and safe table eggs, day-old chicks, and poultry feed across Pakistan.
@@ -166,14 +166,14 @@ export default function AmigoFarms() {
           </div>
           <div className="hidden lg:flex flex-1 flex-col gap-4 items-start">
             <div className="h-[330px] relative rounded-2xl w-full overflow-hidden">
-              <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-2xl" src={imgEggQualityPhotography} />
+              <img alt="Egg Quality Photography" className="absolute inset-0 max-w-none object-cover size-full rounded-2xl" src={imgEggQualityPhotography} />
             </div>
             <div className="flex flex-col sm:flex-row gap-4 items-start w-full">
               <div className="w-full sm:flex-1 h-[200px] relative rounded-2xl overflow-hidden">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-2xl" src={imgHealthyChicksPhotography} />
+                <img alt="Healthy Chicks" className="absolute inset-0 max-w-none object-cover size-full rounded-2xl" src={imgHealthyChicksPhotography} />
               </div>
               <div className="w-full sm:flex-1 h-[200px] relative rounded-2xl overflow-hidden">
-                <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-2xl" src={imgFeedPhotography} />
+                <img alt="Poultry Feed" className="absolute inset-0 max-w-none object-cover size-full rounded-2xl" src={imgFeedPhotography} />
               </div>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function AmigoFarms() {
       <div className="bg-[#faf7f2] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 pb-16 lg:pb-26 w-full">
         <FadeIn className="flex flex-col gap-4 items-start w-full">
           <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">Take a tour</p>
-          <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Experience Amigo Farms</p>
+          <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Experience Amigo Farms</h2>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base max-w-3xl">Step inside our state-of-the-art facilities and see our commitment to quality, health, and automation firsthand.</p>
         </FadeIn>
         
@@ -235,7 +235,7 @@ export default function AmigoFarms() {
           <div className="flex flex-col gap-8 items-start shrink-0 w-full lg:w-[420px]">
             <div className="flex flex-col gap-4 items-start w-full">
               <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">{`History & heritage`}</p>
-              <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Five decades of purposeful progress</p>
+              <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Five decades of purposeful progress</h2>
             </div>
             <div className="bg-[#07668C] flex flex-col gap-4 items-start p-6 md:p-8 rounded-2xl w-full">
               <p className="font-['Lora:Regular'] font-normal text-[#f0a23a] text-5xl whitespace-nowrap">"</p>
@@ -321,7 +321,7 @@ export default function AmigoFarms() {
             <div className="bg-[#f0a23a] h-[3px] rounded-sm shrink-0 w-8" />
             <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase whitespace-nowrap">Core values</p>
           </div>
-          <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Six principles, one carton</p>
+          <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Six principles, one carton</h2>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">The standards behind every bird, every batch, and every delivery.</p>
         </FadeIn>
 
@@ -351,7 +351,7 @@ export default function AmigoFarms() {
       <div id="operations" className="bg-white flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full">
         <div className="flex flex-col gap-4 items-start w-full">
           <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">{`Operations & infrastructure`}</p>
-          <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">A semi-integrated network across five verticals</p>
+          <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">A semi-integrated network across five verticals</h2>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">Control at every critical stage keeps quality measurable, welfare protected, and supply dependable.</p>
         </div>
 
@@ -359,13 +359,13 @@ export default function AmigoFarms() {
           {/* Card 1: Horizontal featured card */}
           <div className="lg:col-span-8 bg-white flex flex-col md:flex-row rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
             <div className="h-[240px] md:h-auto md:w-[45%] lg:w-[50%] relative shrink-0 overflow-hidden">
-              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography} />
+              <img alt="Commercial Layer Farming" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography} />
             </div>
             <div className="flex flex-col gap-4 items-start justify-center p-8 lg:p-12 w-full md:w-[55%] lg:w-[50%]">
               <div className="bg-[#fff1d8] flex items-start px-3 py-1.5 rounded-full shrink-0">
                 <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-xs whitespace-nowrap">~400,000 commercial layers</p>
               </div>
-              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-3xl lg:text-4xl">01 Commercial Layer Farming</p>
+              <h3 className="font-['Lora:Bold'] font-bold text-[#17242a] text-3xl lg:text-4xl">01 Commercial Layer Farming</h3>
               <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">Fully automated environmental control housing, automated egg collection, hygienic grading, and temperature-controlled storage.</p>
             </div>
           </div>
@@ -373,13 +373,13 @@ export default function AmigoFarms() {
           {/* Card 2: Vertical featured card */}
           <div className="lg:col-span-4 bg-[#07668C] flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
             <div className="h-[220px] md:h-[240px] relative shrink-0 w-full overflow-hidden">
-              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography1} />
+              <img alt="Breeder & Broiler Farming" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography1} />
             </div>
             <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
               <div className="bg-[rgba(255,255,255,0.1)] flex items-start px-3 py-1.5 rounded-full shrink-0">
                 <p className="font-['Inter:Bold'] font-bold text-white text-xs whitespace-nowrap">~500,000 broiler capacity</p>
               </div>
-              <p className="font-['Lora:Bold'] font-bold text-white text-2xl">{`02 Breeder & Broiler Farming`}</p>
+              <h3 className="font-['Lora:Bold'] font-bold text-white text-2xl">{`02 Breeder & Broiler Farming`}</h3>
               <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#d5e4ea] text-sm">Environmentally controlled dark houses spread across 10 strategic farm locations, managed by specialized production teams using internal day-old chicks and feed.</p>
             </div>
           </div>
@@ -387,13 +387,13 @@ export default function AmigoFarms() {
           {/* Card 3: Standard Vertical */}
           <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
             <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
-              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography2} />
+              <img alt="Amigo Feed Mill" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src={imgPhotography2} />
             </div>
             <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
               <div className="bg-[#e6f2f5] flex items-start px-3 py-1.5 rounded-full shrink-0">
                 <p className="font-['Inter:Bold'] font-bold text-[#07668C] text-xs whitespace-nowrap">Amigo Feed Mill, 1,500+ MT/month</p>
               </div>
-              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">03 Feed Milling</p>
+              <h3 className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl">03 Feed Milling</h3>
               <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#47545a] text-sm">High-grade pellet feed formulated specifically for Layer, Breeder, and Broiler nutrition, produced on independent, company-owned land with in-house testing protocols.</p>
             </div>
           </div>
@@ -401,10 +401,10 @@ export default function AmigoFarms() {
           {/* Card 4: Standard Vertical */}
           <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
             <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
-              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1651454736368-e65cff3b37e9?q=80&w=1000&auto=format&fit=crop" />
+              <img alt="Hatchery Operations" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1651454736368-e65cff3b37e9?q=80&w=1000&auto=format&fit=crop" />
             </div>
             <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
-              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl mt-1.5">04 Hatchery Operations</p>
+              <h3 className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl mt-1.5">04 Hatchery Operations</h3>
               <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#47545a] text-sm">Strategic multi-location hatcheries housing top-tier commercial equipment, supplying day-old chicks to farmers across the region.</p>
             </div>
           </div>
@@ -412,10 +412,10 @@ export default function AmigoFarms() {
           {/* Card 5: Standard Vertical */}
           <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
             <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
-              <img alt="" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" />
+              <img alt="Distribution and Logistics" className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" />
             </div>
             <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
-              <p className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl mt-1.5">{`05 Distribution & Logistics`}</p>
+              <h3 className="font-['Lora:Bold'] font-bold text-[#17242a] text-2xl mt-1.5">{`05 Distribution & Logistics`}</h3>
               <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#47545a] text-sm">Marketing and sales operations are managed in-house with a specialized delivery fleet for feed and temperature-regulated vans dedicated to chicks.</p>
             </div>
           </div>
@@ -427,7 +427,7 @@ export default function AmigoFarms() {
       <div id="quality" className="bg-[#07668C] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full">
         <div className="flex flex-col gap-4 items-start w-full">
           <p className="font-['Inter:Bold'] font-bold text-[#f0a23a] text-xs uppercase">{`Quality assurance & biosecurity`}</p>
-          <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-white text-3xl md:text-4xl lg:text-5xl">Trust, protected at every gate</p>
+          <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-white text-3xl md:text-4xl lg:text-5xl">Trust, protected at every gate</h2>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#d5e4ea] text-base">Layered controls protect flock health, product safety, and every customer we serve.</p>
         </div>
         <div className="flex flex-col lg:flex-row gap-4 items-stretch w-full">
@@ -466,7 +466,7 @@ export default function AmigoFarms() {
       <div id="contact" className="bg-[#faf7f2] flex flex-col gap-8 md:gap-12 items-start px-6 md:px-12 lg:px-20 py-16 lg:py-26 w-full">
         <div className="flex flex-col gap-4 items-start w-full">
           <p className="font-['Inter:Bold'] font-bold text-[#07668c] text-xs uppercase">Contact us</p>
-          <p className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Start a conversation with our team</p>
+          <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#17242a] text-3xl md:text-4xl lg:text-5xl">Start a conversation with our team</h2>
           <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#47545a] text-base">Tell us what you need. Our Gujranwala team will connect you with the right department.</p>
         </div>
         <div className="flex flex-col lg:flex-row gap-8 items-start w-full">
