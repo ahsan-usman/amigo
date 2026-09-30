@@ -1,11 +1,11 @@
 const assetPathPrefix = "/assets";
-export const imgHero = `${assetPathPrefix}/e3a2e.png`;
+export const imgHero = `${assetPathPrefix}/images/banner.jpg`;
 export const imgLogoArtwork = `${assetPathPrefix}/amigologo.svg`;
-export const imgEggQualityPhotography = `${assetPathPrefix}/64cb4.png`;
-export const imgHealthyChicksPhotography = `${assetPathPrefix}/40747.png`;
-export const imgFeedPhotography = `${assetPathPrefix}/86b2c.png`;
-export const imgPhotography = `${assetPathPrefix}/4786e.png`;
-export const imgPhotography1 = `${assetPathPrefix}/1b1a6.png`;
+export const imgEggQualityPhotography = `${assetPathPrefix}/images/banner.jpg`;
+export const imgHealthyChicksPhotography = `${assetPathPrefix}/images/image1.jpg`;
+export const imgFeedPhotography = `${assetPathPrefix}/images/image2.jpg`;
+export const imgPhotography = `${assetPathPrefix}/images/banner.jpg`;
+export const imgPhotography1 = `${assetPathPrefix}/images/image2.jpg`;
 export const imgPhotography2 = `${assetPathPrefix}/ae0e6.png`;
 export const imgPhotography3 = `${assetPathPrefix}/33217.png`;
 export const imgMap = `${assetPathPrefix}/61f21.png`;
