@@ -1,8 +1,16 @@
-import React from "react";
-import { useInView } from "../hooks/useInView";
+import React from "react"
+import { useInView } from "../hooks/useInView"
 
-export function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const { ref, inView } = useInView();
+export function FadeIn({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode
+  delay?: number
+  className?: string
+}) {
+  const { ref, inView } = useInView()
   return (
     <div
       ref={ref}
@@ -15,5 +23,5 @@ export function FadeIn({ children, delay = 0, className = "" }: { children: Reac
     >
       {children}
     </div>
-  );
+  )
 }
