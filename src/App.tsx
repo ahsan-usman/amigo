@@ -353,6 +353,136 @@ export default function AmigoFarms() {
         </FadeIn>
       </div>
 
+      {/* Operations */}
+      <div
+        id="operations"
+        className="bg-white flex flex-col gap-6 md:gap-8 items-start px-6 md:px-12 lg:px-20 py-10 lg:py-16 w-full"
+      >
+        <div className="flex flex-col gap-4 items-start w-full">
+          <p className="font-['Inter:Bold'] font-bold text-[#5ba3c2] text-xs uppercase">
+            {t("operations.tagline")}
+          </p>
+          <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#1a5c8a] text-3xl md:text-4xl lg:text-5xl">
+            {t("operations.title")}
+          </h2>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#2a5d7a] text-base">
+            {t("operations.desc")}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+          {/* Card 1: Horizontal featured card */}
+          <div className="lg:col-span-8 bg-white flex flex-col md:flex-row rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[240px] md:h-auto md:w-[45%] lg:w-[50%] relative shrink-0 overflow-hidden">
+              <img
+                alt="Commercial Layer Farming"
+                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
+                src={imgPhotography}
+              />
+            </div>
+            <div className="flex flex-col gap-4 items-start justify-center p-8 lg:p-12 w-full md:w-[55%] lg:w-[50%]">
+              <div className="bg-[#fff1d8] flex items-start px-3 py-1.5 rounded-full shrink-0">
+                <p className="font-['Inter:Bold'] font-bold text-[#45c3f5] text-xs whitespace-nowrap">
+                  {t("operations.c1_badge")}
+                </p>
+              </div>
+              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-3xl lg:text-4xl">
+                {t("operations.c1_title")}
+              </h3>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#2a5d7a] text-base">
+                {t("operations.c1_desc")}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Vertical featured card */}
+          <div className="lg:col-span-4 bg-[#105f8c] flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] md:h-[240px] relative shrink-0 w-full overflow-hidden">
+              <img
+                alt="Breeder & Broiler Farming"
+                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
+                src={imgPhotography1}
+              />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <div className="bg-[rgba(255,255,255,0.1)] flex items-start px-3 py-1.5 rounded-full shrink-0">
+                <p className="font-['Inter:Bold'] font-bold text-white text-xs whitespace-nowrap">
+                  {t("operations.c2_badge")}
+                </p>
+              </div>
+              <h3 className="font-['Lora:Bold'] font-bold text-white text-2xl">
+                {t("operations.c2_title")}
+              </h3>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#d5e4ea] text-sm">
+                {t("operations.c2_desc")}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Standard Vertical */}
+          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
+              <img
+                alt="Amigo Feed Mill"
+                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
+                src={imgPhotography2}
+              />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <div className="bg-[#eaf4fb] flex items-start px-3 py-1.5 rounded-full shrink-0">
+                <p className="font-['Inter:Bold'] font-bold text-[#5ba3c2] text-xs whitespace-nowrap">
+                  {t("operations.c3_badge")}
+                </p>
+              </div>
+              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-2xl">
+                {t("operations.c3_title")}
+              </h3>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#2a5d7a] text-sm">
+                {t("operations.c3_desc")}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4: Standard Vertical */}
+          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
+              <img
+                alt="Hatchery Operations"
+                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
+                src={imgPhotography3}
+              />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-2xl mt-1.5">
+                {t("operations.c4_title")}
+              </h3>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#2a5d7a] text-sm">
+                {t("operations.c4_desc")}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 5: Standard Vertical */}
+          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
+            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
+              <img
+                alt="Distribution and Logistics"
+                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
+                src="/assets/images/image4.jpeg"
+              />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
+              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-2xl mt-1.5">
+                {t("operations.c5_title")}
+              </h3>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#2a5d7a] text-sm">
+                {t("operations.c5_desc")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* About Us */}
       <div
         id="about"
@@ -629,135 +759,6 @@ export default function AmigoFarms() {
         </div>
       </div>
 
-      {/* Operations */}
-      <div
-        id="operations"
-        className="bg-white flex flex-col gap-6 md:gap-8 items-start px-6 md:px-12 lg:px-20 py-10 lg:py-16 w-full"
-      >
-        <div className="flex flex-col gap-4 items-start w-full">
-          <p className="font-['Inter:Bold'] font-bold text-[#5ba3c2] text-xs uppercase">
-            {t("operations.tagline")}
-          </p>
-          <h2 className="font-['Lora:Bold'] font-bold leading-[1.08] text-[#1a5c8a] text-3xl md:text-4xl lg:text-5xl">
-            {t("operations.title")}
-          </h2>
-          <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#2a5d7a] text-base">
-            {t("operations.desc")}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
-          {/* Card 1: Horizontal featured card */}
-          <div className="lg:col-span-8 bg-white flex flex-col md:flex-row rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
-            <div className="h-[240px] md:h-auto md:w-[45%] lg:w-[50%] relative shrink-0 overflow-hidden">
-              <img
-                alt="Commercial Layer Farming"
-                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
-                src={imgPhotography}
-              />
-            </div>
-            <div className="flex flex-col gap-4 items-start justify-center p-8 lg:p-12 w-full md:w-[55%] lg:w-[50%]">
-              <div className="bg-[#fff1d8] flex items-start px-3 py-1.5 rounded-full shrink-0">
-                <p className="font-['Inter:Bold'] font-bold text-[#45c3f5] text-xs whitespace-nowrap">
-                  {t("operations.c1_badge")}
-                </p>
-              </div>
-              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-3xl lg:text-4xl">
-                {t("operations.c1_title")}
-              </h3>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.65] text-[#2a5d7a] text-base">
-                {t("operations.c1_desc")}
-              </p>
-            </div>
-          </div>
-
-          {/* Card 2: Vertical featured card */}
-          <div className="lg:col-span-4 bg-[#105f8c] flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
-            <div className="h-[220px] md:h-[240px] relative shrink-0 w-full overflow-hidden">
-              <img
-                alt="Breeder & Broiler Farming"
-                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
-                src={imgPhotography1}
-              />
-            </div>
-            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
-              <div className="bg-[rgba(255,255,255,0.1)] flex items-start px-3 py-1.5 rounded-full shrink-0">
-                <p className="font-['Inter:Bold'] font-bold text-white text-xs whitespace-nowrap">
-                  {t("operations.c2_badge")}
-                </p>
-              </div>
-              <h3 className="font-['Lora:Bold'] font-bold text-white text-2xl">
-                {t("operations.c2_title")}
-              </h3>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#d5e4ea] text-sm">
-                {t("operations.c2_desc")}
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3: Standard Vertical */}
-          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
-            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
-              <img
-                alt="Amigo Feed Mill"
-                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
-                src={imgPhotography2}
-              />
-            </div>
-            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
-              <div className="bg-[#eaf4fb] flex items-start px-3 py-1.5 rounded-full shrink-0">
-                <p className="font-['Inter:Bold'] font-bold text-[#5ba3c2] text-xs whitespace-nowrap">
-                  {t("operations.c3_badge")}
-                </p>
-              </div>
-              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-2xl">
-                {t("operations.c3_title")}
-              </h3>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#2a5d7a] text-sm">
-                {t("operations.c3_desc")}
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4: Standard Vertical */}
-          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
-            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
-              <img
-                alt="Hatchery Operations"
-                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
-                src={imgPhotography3}
-              />
-            </div>
-            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
-              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-2xl mt-1.5">
-                {t("operations.c4_title")}
-              </h3>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#2a5d7a] text-sm">
-                {t("operations.c4_desc")}
-              </p>
-            </div>
-          </div>
-
-          {/* Card 5: Standard Vertical */}
-          <div className="lg:col-span-4 bg-white flex flex-col rounded-2xl shadow-[0px_12px_36px_-8px_rgba(18,52,67,0.12)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_24px_48px_-12px_rgba(18,52,67,0.2)] group">
-            <div className="h-[220px] relative shrink-0 w-full overflow-hidden">
-              <img
-                alt="Distribution and Logistics"
-                className="absolute inset-0 max-w-none object-cover size-full transition-transform duration-700 group-hover:scale-105"
-                src="/assets/images/image4.jpeg"
-              />
-            </div>
-            <div className="flex flex-1 flex-col gap-3 items-start p-6 lg:p-8 w-full">
-              <h3 className="font-['Lora:Bold'] font-bold text-[#1a5c8a] text-2xl mt-1.5">
-                {t("operations.c5_title")}
-              </h3>
-              <p className="font-['Inter:Regular'] font-normal leading-[1.6] text-[#2a5d7a] text-sm">
-                {t("operations.c5_desc")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Quality Assurance */}
       <div

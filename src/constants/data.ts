@@ -127,13 +127,13 @@ export const stats = [
 ]
 
 export const navLinks: { label: string id: string }[] = [
+  { label: "Operations", id: "operations" },
+
   { label: "About", id: "about" },
 
   { label: "Heritage", id: "heritage" },
 
   { label: "Values", id: "values" },
-
-  { label: "Operations", id: "operations" },
 
   { label: "Quality", id: "quality" },
 
